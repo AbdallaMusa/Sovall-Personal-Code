@@ -41,18 +41,21 @@ function HeaderLoggedIn(props) {
 
   /*Hardtyped arrays*/
   const menuOptionsData = [
-    [resources_plain, resources_selected, "/comingsoon"],
-    [rocket_plain, rocket_selected, "/comingsoon"],
+    // [resources_plain, resources_selected, "/comingsoon"],
+    // [rocket_plain, rocket_selected, "/comingsoon"],
     [saved_plain, saved_selected, "/comingsoon"],
     [mainfeed_plain, mainfeed_selected, "/mainfeed"],
   ];
   const filterOptionsData = [
-    ["Posts", "/"],
+    ["All Projects", "/"],
+    ["Project Issues", "/"],
+    ["Ideas", "/"],
+    ["Ask Sovall", "/"],
     // ["Problem", "/"],
     // ["Solutions", "/"],
     // ["Resources", "/"],
     // ["Opportunities", "/"],
-    ["People", "/"],
+    // ["People", "/"],
     // ["Other", "/"],
   ];
     
@@ -93,13 +96,13 @@ function HeaderLoggedIn(props) {
   /* Pill menu code */
   const filterOptions = filterOptionsData.map((item, i) => {
     const style =
-      i === currentFilter ? "bg-white text-green-4" : "bg-green-7 text-white";
+      i === currentFilter ? "bg-[#3C9A9A]" : "bg-[#3C9A9A]-3 text-white";
     return (
       <button
         key={"filter-option-" + i}
         value={i}
         className={
-          "h-full rounded-full flex items-center text-[8pt] px-2 " + style
+          "h- flex items-center text-[12pt] px-2 border-r-2 border-white-500 " + style
         }
         onClick={handleFilter}
       >
@@ -132,22 +135,22 @@ function HeaderLoggedIn(props) {
   const profilePicStyle = currentMenuOption === 4 ? "bg-yellow-2" : "";
 
   return (
-    <div className="h-[5rem] w-full bg-green-6 px-7 py-1 flex flex-wrap gap-[0.3rem] items-center justify-center text-white drop-shadow-xl z-20">
-      <div className="flex flex-1 flex-1 items-center justify-left gap-6">
+    <div className="h-[5rem] w-full bg-[#044A54] px-7 py-1 flex flex-wrap gap-[0.3rem] items-center justify-center text-white drop-shadow-xl z-20">
+      <div className="flex flex-1 flex-1 items-center justify-left gap-12">
         <div className="flex items-center gap-2">
           <a href="/mainfeed">
-            <img className="h-5" src={sovall} />
+            <img className="h-8" src={sovall} />
           </a>
         </div>
         <div className="flex">
           <Search
-            onEnterButtonClicked = {onEnterButtonClicked} icon={searchIcon} placeholder="Search"
-            placeholderColor="text-white" style="text-white border border-white"
+            onEnterButtonClicked = {onEnterButtonClicked} icon={searchIcon} placeholder="Search ..."
+            placeholderColor="text-white" style=" border-b-2 border-white-500  "
             w="full" h="5"
           />
         </div>
       </div>
-        <div className="flex flex-2 py-1 gap-4 items-center">{filterOptions}</div>
+        <div className="flex flex-2 py-1 gap-2 items-center mt-12">{filterOptions}</div>
 		<div className="flex flex-1 gap-8 justify-end items-center">
           {menuOptions}
           <a href="/home">
