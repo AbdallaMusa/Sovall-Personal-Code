@@ -96,13 +96,13 @@ function HeaderLoggedIn(props) {
   /* Pill menu code */
   const filterOptions = filterOptionsData.map((item, i) => {
     const style =
-      i === currentFilter ? "bg-[#3C9A9A]" : "bg-[#3C9A9A]-3 text-white";
+      i === currentFilter ? "bg-[#3C9A9A]" : "bg-[#3C9A9A]-4 text-white ";
     return (
       <button
         key={"filter-option-" + i}
         value={i}
         className={
-          "h- flex items-center text-[12pt] px-2 border-r-2 border-white-500 " + style
+          "flex-grow h-6 flex items-center text-[9pt] px-12  border-1 rounded-t-lg  border-[#3C9A9A] gap-2  " + style
         }
         onClick={handleFilter}
       >
@@ -135,8 +135,8 @@ function HeaderLoggedIn(props) {
   const profilePicStyle = currentMenuOption === 4 ? "bg-yellow-2" : "";
 
   return (
-    <div className="h-[5rem] w-full bg-[#044A54] px-7 py-1 flex flex-wrap gap-[0.3rem] items-center justify-center text-white drop-shadow-xl z-20">
-      <div className="flex flex-1 flex-1 items-center justify-left gap-12">
+    <div className="h-[5rem] w-full bg-[#044A54] px-2 py-1 flex flex-wrap gap-[0.3  rem] items-center justify-center text-white drop-shadow-xl z-20">
+      <div className="flex flex-1 flex-1 items-center justify-left gap-5">
         <div className="flex items-center gap-2">
           <a href="/mainfeed">
             <img className="h-8" src={sovall} />
@@ -150,8 +150,8 @@ function HeaderLoggedIn(props) {
           />
         </div>
       </div>
-        <div className="flex flex-2 py-1 gap-2 items-center mt-12">{filterOptions}</div>
-		<div className="flex flex-1 gap-8 justify-end items-center">
+        <div className="flex flex-3 py-1 gap-0 items-center mt-12 justify-between mx-auto">{filterOptions}</div>
+<div className="flex flex-1 gap-5 justify-end items-center">
           {menuOptions}
           <a href="/home">
             <img

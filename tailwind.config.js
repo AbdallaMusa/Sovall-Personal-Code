@@ -87,7 +87,7 @@ module.exports = {
             },
 
             fontFamily: {
-                'nunito': ['Nunito', 'sans-serif'],
+                // 'nunito': ['Nunito', 'sans-serif'],
                 'inter': ['Inter', 'sans-serif'],
 
             },
